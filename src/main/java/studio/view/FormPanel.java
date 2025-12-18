@@ -1,49 +1,68 @@
 package studio.view;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import studio.controller.EquipmentController;
 
+import javax.swing.*;
 import java.awt.*;
 
-
 public class FormPanel extends JPanel {
-    JTextField nameField, qtyField;
-    JButton addButton;
 
-    public FormPanel() {
-        setLayout(new GridLayout(0, 2));
+    JTextField idField, nameField, qtyField;
+    JComboBox<String> categoryBox, conditionBox;
+    JButton addButton, updateButton, deleteButton;
 
-        // Example fields; adjust labels and names as needed
-        add(new JLabel("Nama Alat:"));
-        nameField = new JTextField(20);
+    public FormPanel(EquipmentController controller) {
+        setLayout(new GridLayout(0, 2, 10, 10));
+        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        idField = new JTextField();
+        nameField = new JTextField();
+        qtyField = new JTextField();
+
+        categoryBox = new JComboBox<>(new String[]{
+                "Guitar", "Drum", "Audio", "Keyboard", "Other"
+        });
+
+        conditionBox = new JComboBox<>(new String[]{
+                "Good", "Needs Service", "Broken"
+        });
+
+        addButton = new JButton("Add");
+        updateButton = new JButton("Update");
+        deleteButton = new JButton("Delete");
+
+        add(new JLabel("ID"));
+        add(idField);
+        add(new JLabel("Equipment Name"));
         add(nameField);
-
-        add(new JLabel("Jumlah:"));
-        qtyField = new JTextField(20);
+        add(new JLabel("Category"));
+        add(categoryBox);
+        add(new JLabel("Quantity"));
         add(qtyField);
+        add(new JLabel("Condition"));
+        add(conditionBox);
 
-        addButton = new JButton("Tambah");
         add(addButton);
+        add(updateButton);
+        add(new JLabel());
+        add(deleteButton);
 
-    //     JPanel panel = new JPanel();
-    //     panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        addButton.addActionListener(e -> controller.add(
+            idField.getText(),
+            nameField.getText(),
+            (String) categoryBox.getSelectedItem(),
+            Integer.parseInt(qtyField.getText()),
+            (String) conditionBox.getSelectedItem()
+        ));
 
-    //     panel.setBorder(new EmptyBorder(10, 10, 10 ,10));
-    //     JTextField NamaAlat = new JTextField(20);
-    //     JTextField Kategori = new JTextField(20);
-    //     JTextField Jumlah = new JTextField(20);
-    //     JTextField Kondisi = new JTextField(20);
+        updateButton.addActionListener(e -> controller.update(
+            idField.getText(),
+            nameField.getText(),
+            (String) categoryBox.getSelectedItem(),
+            Integer.parseInt(qtyField.getText()),
+            (String) conditionBox.getSelectedItem()
+        ));
 
-    //     panel.add(new JLabel("Book ID:"));
-    //     panel.add(NamaAlat);
-    //     panel.add(new JLabel("Title:"));
-    //     panel.add(Kategori);
-    //     panel.add(new JLabel("Author:"));
-    //     panel.add(Jumlah);
-    //     panel.add(new JLabel("Year:"));
-    //     panel.add(Kondisi);
-    
-
-
-}
+        deleteButton.addActionListener(e -> controller.delete());
+    }
 }
