@@ -8,7 +8,7 @@ import java.awt.*;
 public class MainFrame extends JFrame {
 
     public MainFrame() {
-        super("Manajemen Studio Musik");
+        super("Music Studio Inventory");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 700);

@@ -4,7 +4,6 @@
 ✔ JTable
 ✔ Validasi input
 ✔ UI rapi
-
 ✔ Tanpa komentar berlebihan
 Notebook aplikasi inventaris studio musik sederhana menggunakan Java Swing dengan arsitektur MVC. Aplikasi ini memungkinkan pengguna untuk menambahkan, melihat, memperbarui, dan menghapus data peralatan studio musik. 
 # Dokumentasi Aplikasi Inventaris Studio Musik
@@ -40,8 +39,7 @@ Pemecahan ini meningkatkan:
 - Keterbacaan kode
 - Pemeliharaan
 - Skalabilitas
-## Cara Menjalankan Proyek
-1️⃣ Prasyarat
-- Java JDK terinstal
-- Maven terinstal
-2️⃣ Kloning Repositori
+
+Model      → Data 
+View       → Tampilan 
+Controller → Logika Aplikasi 

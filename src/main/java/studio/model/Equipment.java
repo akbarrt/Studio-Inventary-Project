@@ -1,26 +1,13 @@
-// package studio.model;
-
-// public class equipment {
-//     private String id;
-//     private String name;
-//     private String category;
-//     private int quantity;
-//     private String condition;
-
-//     // constructor
-//     // getter & setter
-// }
-
 package studio.model;
 
-public class equipment {
+public class Equipment {
     private String id;
     private String name;
     private String category;
     private int quantity;
     private String condition;
 
-    public equipment(String id, String name, String category, int quantity, String condition) {
+    public Equipment(String id, String name, String category, int quantity, String condition) {
         this.id = id;
         this.name = name;
         this.category = category;

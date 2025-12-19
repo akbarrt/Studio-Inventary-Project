@@ -35,7 +35,7 @@ This application is designed as a **CRUD system** (Create, Read, Update, Delete)
 This project uses the **MVC (Model–View–Controller)** architecture:
 
 ### 🔹 Model
-Responsible for data representation.
+Responsible for data representation. 
 - `Equipment.java`
 
 ### 🔹 View

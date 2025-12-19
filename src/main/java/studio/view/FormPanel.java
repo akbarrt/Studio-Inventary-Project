@@ -1,7 +1,6 @@
 package studio.view;
 
 import studio.controller.EquipmentController;
-
 import javax.swing.*;
 import java.awt.*;
 
