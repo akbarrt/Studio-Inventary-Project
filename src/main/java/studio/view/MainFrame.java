@@ -14,6 +14,9 @@ public class MainFrame extends JFrame {
         setSize(1000, 700);
         setLayout(new BorderLayout());
 
+        // Dark background for the main window content
+        getContentPane().setBackground(new Color(32, 32, 40));
+
         TablePanel tablePanel = new TablePanel();
         EquipmentController controller = new EquipmentController(tablePanel.getModel(), tablePanel.getTable());
         FormPanel formPanel = new FormPanel(controller);

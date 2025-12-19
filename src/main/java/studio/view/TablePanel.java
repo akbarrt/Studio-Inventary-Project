@@ -13,10 +13,15 @@ public class TablePanel extends JPanel {
         setLayout(new BorderLayout());
 
         String[] columns = {
-                "ID", "Equipment Name", "Category", "Quantity", "Condition"
+            "ID", "Equipment Name", "Category", "Quantity", "Condition"
         };
 
-        model = new DefaultTableModel(columns, 0);
+        model = new DefaultTableModel(columns, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+            return false;
+            }
+        };
         table = new JTable(model);
         table.setRowHeight(28);
 

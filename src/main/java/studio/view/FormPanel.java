@@ -42,9 +42,11 @@ public class FormPanel extends JPanel {
         add(conditionBox);
 
         add(addButton);
-        add(updateButton);
-        add(new JLabel());
         add(deleteButton);
+        add(new JLabel());
+        add(updateButton);
+        
+
 
         addButton.addActionListener(e -> controller.add(
             idField.getText(),
